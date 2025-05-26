@@ -1,0 +1,47 @@
+A raw dataset in Excel format from the Amazon sales platform has been provided. Using this dataset, a Power BI dashboard needs to be developed with AI capabilities to enable comprehensive sales analytics.
+
+So first I used Chatgpt to create the required column in the raw data excel sheet and later named(Amazon Raw Data Final Using AI) which will be using for preparing the Dasboard.
+
+https://chatgpt.com/
+
+Prompt 1:
+write an excel formula to give value "Delay", if the difference of dates between cell C2 and B2 is greater than 4, otherwise the value should be "On time"
+
+Solution 1
+=IF(C2 - B2 > 4, "Delay", "On time")
+
+Prompt 2:
+write an excel formula to extract name from email id in F2 with @ as a separator
+
+Solution 2
+=LEFT(F2, FIND("@", F2) - 1)
+
+Prompt 3:
+I have comma separated value in G2. Write 3 excel formula to extract the value as comma as a separator in H2, I2 and J2
+
+H2
+=TRIM(LEFT(G2, FIND(",", G2) - 1))
+
+I2
+=TRIM(MID(G2, FIND(",", G2) + 1, FIND(",", G2, FIND(",", G2) + 1) - FIND(",", G2) - 1))
+
+J2
+=TRIM(MID(G2, FIND(",", G2, FIND(",", G2) + 1) + 1, LEN(G2)))
+
+Final Dataset
+
+https://drive.google.com/uc?export=download&id=1Fypty-6maIEB4rrZRMnWEaC2_P4ZswvS
+
+####
+Visuals Created:
+Card Visuals : Count of Order ID
+Sum of Profit
+Total Sales
+
+Continuous Line Chart: Sum of Sales by Order Date
+
+Tree Map Chart: Sum of Sales by Category.
+
+Guage Chart: Sum of Sales for the set target of $1M.
+
+Clustered Bar Chart: Sum of Profit by State
